@@ -1,0 +1,6 @@
+<h2><%=@user.username%></h2>
+ <% @user.vans.each do |van| %>
+   <%=van.make%>
+   <%=van.model%>
+   <%=van.year%>
+<%end%>
