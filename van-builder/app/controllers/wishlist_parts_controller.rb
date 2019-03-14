@@ -1,4 +1,4 @@
-class PartsController < ApplicationController
+class WishlistPartsController < ApplicationController
 
   get '/wishlist_parts/new' do
     if logged_in?
