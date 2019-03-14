@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   get '/users/index' do
-    PartsScraper.scrape_renogy
+    PartsScraper.scrape_campervanhq
     if logged_in?
       @all_parts = Part.all
       erb :'/users/index'
