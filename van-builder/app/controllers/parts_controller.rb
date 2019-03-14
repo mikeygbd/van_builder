@@ -16,8 +16,6 @@ class PartsController < ApplicationController
       url = "https://www.google.com/search?biw=1680&bih=976&tbm=isch&sa=1&q=" + @part_slug + "&oq=" + @part_slug + "&gs_l=psy-ab.3..0l10.4067.7152.0.7267.19.19.0.0.0.0.120.1489.17j2.19.0....0...1.1.64.psy-ab..0.19.1488...0i67k1.0.J04MymRcUzg"
       PartsScraper.scrape_part(url)
       @url = PartsScraper.image_url
-      # @price = PartsScraper.part_price
-      @new_part.price = amount(@new_part.price)
       @new_part.url = @url
       @new_part.user_id = current_user.id
       @new_part.save
