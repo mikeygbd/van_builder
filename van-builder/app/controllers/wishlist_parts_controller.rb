@@ -9,7 +9,7 @@ class WishlistPartsController < ApplicationController
   end
 
   post '/wishlist_parts/new' do
-    if logged_in? && params[:manufacturer] != "" && params[:name] != "" && params[:price] != "" && params[:qty] != ""
+    if logged_in? && params[:name] != "" && params[:price] != "" && params[:qty] != ""
       @new_wishlist_part = WishlistPart.create(params)
       @wishlist_part_slug = "#{@new_wishlist_part.manufacturer} #{@new_wishlist_part.name} #{@new_wishlist_part.description}".downcase.gsub(' ','+')
       url = "https://www.google.com/search?biw=1680&bih=976&tbm=isch&sa=1&q=" + @wishlist_part_slug + "&oq=" + @wishlist_part_slug + "&gs_l=psy-ab.3..0l10.4067.7152.0.7267.19.19.0.0.0.0.120.1489.17j2.19.0....0...1.1.64.psy-ab..0.19.1488...0i67k1.0.J04MymRcUzg"
@@ -40,7 +40,7 @@ class WishlistPartsController < ApplicationController
 
   patch '/wishlist_parts/:id' do
     @wishlist_part = WishlistPart.find(params[:id])
-    if params[:manufacturer] != "" && params[:name] != "" &&  params[:price] != "" && params[:qty] != ""
+    if params[:name] != "" &&  params[:price] != "" && params[:qty] != ""
       @wishlist_part.update(:manufacturer => params[:manufacturer], :name => params[:name], :price => params[:price], :qty => params[:qty], :description => params[:description])
     end
     @wishlist_part_slug = "#{@wishlist_part.manufacturer} #{@wishlist_part.name} #{@wishlist_part.description}".downcase.gsub(' ','+')
