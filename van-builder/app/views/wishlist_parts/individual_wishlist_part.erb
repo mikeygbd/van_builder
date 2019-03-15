@@ -330,17 +330,37 @@ footer img:focus , footer a:focus { outline: none; }
 }
 
 body {
-  background: #bbb;
+ background: #bbb;
+   padding-top: 70px;
 }
 
+h3 {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  clear: both;
+  font: 1.8em "Trebuchet MS", Arial, sans-serif;
+  padding: 10px 305px 10px;
+  border: solid #000 1px;
+  background: #111;
+}
 h4 {
-  font-size: 1em;
-  text-align: left;
-  padding-left: 60px;
+  font-size: 12px;
+  text-align: center;
 }
-h5 {
-  font-size: 1.3em;
-
+h2 {
+   font-size: 1.1em;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font: 2.6em "Trebuchet MS", Arial, sans-serif;
+  padding: 10px;
+  border: solid #000 1px;
+  background: #111;
+  margin: 50px 170px 50px;
 }
 /*////////// FOOTER //////////*/
 
@@ -375,14 +395,12 @@ footer {
 <body>
 <form class="shadow">
   <div id="contact"
-  <h4><strong>Maunufacture: </strong><%= @wishlist_part.manufacturer %></h4>
-  <h4><strong>Product: </strong><%= @wishlist_part.name %></h4>
-  <h4><strong>Description: </strong><%= @wishlist_part.description %></h4>
-  <h4><strong>Quanity: </strong><%= @wishlist_part.qty %></h4><br>
-
-    <img src="<%= @wishlist_part.url %>"></img>
-    <h5><strong>Unit Price: </strong>$<%= amount(@wishlist_part.price) %></h5>
-    <h5><strong>Total Price: </strong>$<%= amount((@wishlist_part.price * @wishlist_part.qty)) %> </h5>
+    <h2><strong><%= @wishlist_part.manufacturer %> <%= @wishlist_part.name %></strong> </h2>
+    <h4><%= @wishlist_part.description %><br></h4>
+    <h2><strong>Quantity:</strong> <%= @wishlist_part.qty %><br></h2>
+    <img src="<%= @wishlist_part.url %>"></img><br>
+    <h2><strong>Unit Price: </strong>$<%= amount(@wishlist_part.price) %></h2>
+    <h2><strong>Total Price: </strong>$<%= amount((@wishlist_part.price * @wishlist_part.qty)) %> </h2><br>
     <a href="/wishlist_parts/<%= @wishlist_part.id %>/edit">Edit</a>
     &nbsp; | &nbsp;
     <a href="/wishlist_parts/<%= @wishlist_part.id %>/delete">Delete</a>

@@ -285,11 +285,11 @@ fieldset {
       <h3><strong>Total Price:</strong> $<%= amount((@part.price * @part.qty)) %> </h3>
       <form action="/parts/<%= @part.id %>" method="POST">
       <input id="hidden" type="hidden" name="_method" value="PATCH">
-      <input type="text" placeholder= "Manufacturer:" name="manufacturer">
-      <input type="text" placeholder= "Name:"name="name">
-      <input type="text" placeholder= "Price:" name="price">
-      <input type="text" placeholder= "Quantity:" name="qty">
-      <input type="text" placeholder= "Description:" name="description"><br><br>
+      <input type="text" placeholder= "Manufacturer:" name="manufacturer" value="<%= @part.manufacturer %>">
+      <input type="text" placeholder= "Name:"name="name" value="<%= @part.name %>">
+      <input type="text" placeholder= "Price:" name="price" value="<%= amount(@part.price) %>">
+      <input type="text" placeholder= "Quantity:" name="qty" value="<%= @part.qty %>">
+      <input type="text" placeholder= "Description:" name="description" value="<%= @part.description %>"><br><br>
       <button type="update" value="Update" id="update">Update</button>
     </form>
     </div>

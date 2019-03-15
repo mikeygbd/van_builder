@@ -4,20 +4,15 @@
 <head>
   <style>
   * { box-sizing:border-box; }
-
 body {
-
 	font-family: Helvetica;
 	background: #bbb;
   -webkit-font-smoothing: antialiased;
 }
-
 hgroup {
 	text-align:center;
 	margin-top: 4em;
 }
-
-
 #rig {
     max-width:60%;
     margin:0 auto; /*center aligned*/
@@ -35,7 +30,6 @@ hgroup {
     margin:0;
     padding:0;
 }
-
 /* The wrapper for each item */
 .rig-cell {
     /* margin:12px;
@@ -45,7 +39,6 @@ hgroup {
     position: relative;
     overflow:hidden;
 }
-
 /* If have the image layer */
 .rig-img {
     display:block;
@@ -55,11 +48,9 @@ hgroup {
     transform:scale(1);
     transition:all 1s;
 }
-
 #rig li:hover .rig-img {
     transform:scale(1.05);
 }
-
 /* If have the overlay layer */
 .rig-overlay {
     position: absolute;
@@ -78,7 +69,6 @@ hgroup {
 #rig li:hover .rig-overlay {
     opacity:0.8;
 }
-
 /* If have captions */
 .rig-text {
     display:block;
@@ -104,16 +94,11 @@ hgroup {
     transform:translateY(0px);
     opacity:0.9;
 }
-
-
 h1, h3 { font-weight: 300; }
-
 h1 { color: #636363; }
-
 h3 { color: #4a89dc; }
 
 form {
-
   /* display: inline-block; */
   display: block;
   margin-left: auto;
@@ -130,12 +115,10 @@ form {
 	border: 1px solid #ebebeb;
 	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
-
 .group {
 	position: relative;
 	margin-bottom: 45px;
 }
-
 input {
 	font-size: 18px;
 	padding: 10px 10px 10px 5px;
@@ -148,12 +131,8 @@ input {
 	border-radius: 0;
 	border-bottom: 1px solid #757575;
 }
-
 input:focus { outline: none; }
-
-
 /* Label */
-
 label {
 	color: #999;
 	font-size: 18px;
@@ -164,26 +143,19 @@ label {
 	top: 10px;
 	transition: all 0.2s ease;
 }
-
-
 /* active */
-
 input:focus ~ label, input.used ~ label {
 	top: -20px;
   transform: scale(.75); left: -2px;
 	/* font-size: 14px; */
 	color: #4a89dc;
 }
-
-
 /* Underline */
-
 .bar {
 	position: relative;
 	display: block;
 	width: 100%;
 }
-
 .bar:before, .bar:after {
 	content: '';
 	height: 2px;
@@ -193,19 +165,11 @@ input:focus ~ label, input.used ~ label {
 	background: #4a89dc;
 	transition: all 0.2s ease;
 }
-
 .bar:before { left: 50%; }
-
 .bar:after { right: 50%; }
-
-
 /* active */
-
 input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
-
-
 /* Highlight */
-
 .highlight {
 	position: absolute;
 	height: 60%;
@@ -215,25 +179,16 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 	pointer-events: none;
 	opacity: 0.5;
 }
-
-
 /* active */
-
 input:focus ~ .highlight {
 	animation: inputHighlighter 0.3s ease;
 }
-
-
 /* Animations */
-
 @keyframes inputHighlighter {
 	from { background: #4a89dc; }
 	to 	{ width: 0; background: transparent; }
 }
-
-
 /* Button */
-
 .button {
   position: relative;
   display: inline-block;
@@ -254,20 +209,13 @@ input:focus ~ .highlight {
   transition: all 0.15s ease;
 }
 .button:focus { outline: 0; }
-
-
 /* Button modifiers */
-
 .buttonBlue {
   background: #4a89dc;
   text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
 }
-
 .buttonBlue:hover { background: #357bd8; }
-
-
 /* Ripples container */
-
 .ripples {
   position: absolute;
   top: 0;
@@ -277,10 +225,7 @@ input:focus ~ .highlight {
   overflow: hidden;
   background: transparent;
 }
-
-
 /* Ripples circle */
-
 .ripplesCircle {
   position: absolute;
   top: 50%;
@@ -292,67 +237,49 @@ input:focus ~ .highlight {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
 }
-
 .ripples.is-active .ripplesCircle {
   animation: ripples .4s ease-in;
 }
-
-
 /* Ripples animation */
-
 @keyframes ripples {
   0% { opacity: 0; }
-
   25% { opacity: 1; }
-
   100% {
     width: 200%;
     padding-bottom: 200%;
     opacity: 0;
   }
 }
-
 footer { text-align: center; }
-
 footer p {
 	color: #888;
 	font-size: 13px;
 	letter-spacing: .4px;
 }
-
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #FAFAFA inset !important;
 }
-
 footer a {
 	color: #4a89dc;
 	text-decoration: none;
 	transition: all .2s ease;
 }
-
 footer a:hover {
 	color: #666;
 	text-decoration: underline;
 }
-
 footer img {
 	width: 300px;
 	transition: all .2s ease;
 }
-
 footer img:hover { opacity: .83; }
-
 footer img:focus , footer a:focus { outline: none; }
-
 /*////////// BACKGROUNDS //////////*/
 .white-wood {
   background: url(https://previews.123rf.com/images/irrrina/irrrina1406/irrrina140600168/29418362-vintage-white-wooden-wall-background.jpg) no-repeat center top;
   background-size: cover;
 }
-
 .light-fade {
-
-
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
   background: #efefef; /* Old browsers */
     background: -moz-linear-gradient(top,  #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%); /* FF3.6+ */
@@ -363,7 +290,6 @@ footer img:focus , footer a:focus { outline: none; }
     background: linear-gradient(to bottom,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 }
-
 .medium-fade {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
   background: #eeeeee; /* Old browsers */
@@ -372,9 +298,7 @@ footer img:focus , footer a:focus { outline: none; }
   background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
 }
-
 /*////////// NAVBAR //////////*/
-
 #navbar {
   position: fixed;
   top: 0;
@@ -384,11 +308,9 @@ footer img:focus , footer a:focus { outline: none; }
   border-bottom: 1px solid #ccc;
   text-align: center;
 }
-
 #navbar nav {
   border-left: 1px solid #ccc;
 }
-
 #navbar nav a {
   display: inline-block;
   width: 16.6666667%;
@@ -402,12 +324,10 @@ footer img:focus , footer a:focus { outline: none; }
   font: 1em "Trebuchet MS", Arial, sans-serif;
   font-weight: bold;
 }
-
 #navbar nav a.selected {
   background: #333;
   color: white;
 }
-
 #navbar nav a:hover {
   color: white;
   background: rgb(0,0,0); /* Old browsers */
@@ -418,27 +338,21 @@ footer img:focus , footer a:focus { outline: none; }
   background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* IE10+ */
   background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* W3C */
 }
-
 #navbar nav a.menu-icon {
   display: none;
 }
-
 #account {
   z-index: -1;
   float: right;
   margin: 10px;
   padding-right: 5px;
 }
-
 .shadow {
   box-shadow: 0 3px 10px #333;
 }
-
 body {
   padding-top: 70px;
-
 }
-
 h3 {
   position: relative;
   color: #fff;
@@ -453,7 +367,6 @@ h3 {
 h4 {
   font-size: 12px;
   text-align: center;
-
 }
 h2 {
    font-size: 1.1em;
@@ -468,21 +381,16 @@ h1 {
   background: #111;
   margin: 50px 170px 50px;
 }
-
 .parts {
   margin-bottom: 2vh;
 }
-
 .total {
   float: right;
-
   position: relative;
   left: -12.9%;
   padding-bottom: 50px;
 }
-
 /* ////////// FOOTER //////////*/
-
  footer {
   position: fixed;
   bottom: 0;
@@ -492,7 +400,6 @@ h1 {
   /* background: #eee; */
   border-top: 1px solid #ccc;
 }
-
 </style>
 </head>
 <div id="navbar" class="light-fade">
