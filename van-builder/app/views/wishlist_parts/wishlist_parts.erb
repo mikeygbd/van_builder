@@ -120,7 +120,7 @@ form {
   margin-right: auto;
 	height: 65vh;
   width: 30%;
-  margin-left: 165px;
+  margin-left: 171px;
   margin-top: 2vh;
 	/* margin: auto; */
   float: left;
@@ -413,12 +413,15 @@ body {
 }
 
 h3 {
-  color: black;
+  position: relative;
+  color: #fff;
   text-align: center;
+  margin-top: 50px;
   clear: both;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font: 2em "Trebuchet MS", Arial, sans-serif;
+  font: 1.8em "Trebuchet MS", Arial, sans-serif;
+  padding: 10px 356.5px 10px;
+  border: solid #000 1px;
+  background: #111;
 }
 h4 {
   font-size: 12px;
@@ -431,13 +434,22 @@ h2 {
 
 h1 {
   text-align: center;
-  color: black;
-  text-decoration: underline;
+  color: #fff;
+  text-decoration: none;
   font: 2.6em "Trebuchet MS", Arial, sans-serif;
-  padding-bottom: 20px;
+  padding: 10px;
+  border: solid #000 1px;
+  background: #111;
+  margin: 50px 170px 50px;
 }
 
-/*////////// FOOTER //////////*/
+.total {
+  float: right;
+
+  position: relative;
+  left: -13.1%;
+  padding-bottom: 50px;
+}
 
 /*////////// FOOTER //////////*/
 
@@ -480,8 +492,9 @@ footer {
 </form>
 <% end %>
 
-
+<div class="total">
 <h3> <strong>Wishlist Total:</strong> $<%= amount(total.inject(0, :+)) %> </h3>
+</div>
 </body>
 
 <footer class="light-fade">

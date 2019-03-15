@@ -120,7 +120,7 @@ form {
   margin-right: auto;
 	height: 65vh;
   width: 30%;
-  margin-left: 165px;
+  margin-left: 171px;
   margin-top: 2vh;
 	/* margin: auto; */
   float: left;
@@ -428,15 +428,19 @@ footer img:focus , footer a:focus { outline: none; }
 
 body {
   padding-top: 70px;
+
 }
 
 h3 {
-  color: black;
+  position: relative;
+  color: #fff;
   text-align: center;
+  margin-top: 50px;
   clear: both;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font: 2em "Trebuchet MS", Arial, sans-serif;
+  font: 1.8em "Trebuchet MS", Arial, sans-serif;
+  padding: 10px 305px 10px;
+  border: solid #000 1px;
+  background: #111;
 }
 h4 {
   font-size: 12px;
@@ -448,15 +452,30 @@ h2 {
 }
 h1 {
   text-align: center;
-  color: black;
-  text-decoration: underline;
+  color: #fff;
+  text-decoration: none;
   font: 2.6em "Trebuchet MS", Arial, sans-serif;
-  padding-bottom: 20px;
+  padding: 10px;
+  border: solid #000 1px;
+  background: #111;
+  margin: 50px 170px 50px;
 }
 
-/*////////// FOOTER //////////*/
+.parts {
+  margin-bottom: 2vh;
+}
 
-footer {
+.total {
+  float: right;
+
+  position: relative;
+  left: -12.9%;
+  padding-bottom: 50px;
+}
+
+/* ////////// FOOTER //////////*/
+
+ footer {
   position: fixed;
   bottom: 0;
   text-align: center;
@@ -477,6 +496,7 @@ footer {
 </div>
 <body>
     <h1><strong>My Parts</strong></h1>
+    <div class="parts">
 <% total = [] %>
 <% current_user.parts.each do |part| %>
 <% total << (part.price * part.qty) %>
@@ -494,10 +514,13 @@ footer {
   </div>
 </form>
 <% end %>
-
-
-<h3> <strong>Total Spent On Build:</strong> $<%=amount(total.inject(0, :+)) %> </h3>
+  </div>
+  <div class="total">
+  <h3> <strong>Total Spent On Build:</strong> $<%=amount(total.inject(0, :+)) %> </h3>
+  </div>
 </body>
+
+
 
 <footer class="light-fade">
     &copy; 2019 Van Builder. All Rights Reserved.
