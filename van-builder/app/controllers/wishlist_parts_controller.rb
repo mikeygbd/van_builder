@@ -18,7 +18,7 @@ class WishlistPartsController < ApplicationController
       @new_wishlist_part.url = @url
       @new_wishlist_part.user_id = current_user.id
       @new_wishlist_part.save
-      redirect to '/wishlist_parts'
+      redirect to '/users/index'
     else
       redirect to '/users/index'
     end
