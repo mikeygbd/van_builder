@@ -94,22 +94,22 @@ input.radio:checked ~ label { description: #777; }
 input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
 
 #rig {
-    max-width:60%;
+    max-width:100%;
     margin:0 auto; /*center aligned*/
     padding:0;
     font-price:0; /* Remember to change it back to normal font price if have captions */
     list-style:none;
     background-description: white;
     overflow-y: auto;
-    height: 373px;
+    height: 415px;
 }
 #rig li {
     display: inline-block;
-    *display:inline;/*for IE6 - IE7*/
+    /* display:inline;/*for IE6 - IE7*/
     width:100%;
     vertical-align:middle;
     box-sizing:border-box;
-    margin:0;
+    margin:7px;
     padding:0;
 }
 
@@ -158,18 +158,18 @@ input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
 /* If have captions */
 .rig-text {
     display:block;
-    margin: 0 auto;
+    margin: 5px auto;
     box-sizing:border-box;
     position:absolute;
     left:0;
     width:100%;
     text-align:center;
     text-transform:capitalize;
-    font-price:10px;
-    font-size: 11px;
+    /* font-price:10px; */
+    font-size: 15px;
     font-weight:bold;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight:normal!important;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    /* font-weight:normal!important; */
     top:1%;
     description:white;
     opacity:0;
@@ -186,7 +186,8 @@ input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
 
 @media (max-width: 9000px) {
     #rig li {
-        width:25%;
+
+        width:22%;
     }
 }
 
@@ -435,7 +436,7 @@ small.text-muted {
 }
   .lead {
   text-align:center;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Trebuchet MS", Arial, sans-serif;
 
 }
 .van img {
@@ -657,7 +658,7 @@ footer {
                             <div class="panel panel-default shadow">
                               <div class="panel-heading"><h4>What Is Van Builder?</h4></div>
                               <div class="panel-body">
-                                Van Builder is a web application, designed by van life enthusiast, for van life enthusiasts. We want you to have one place to go for your van build. This application gives you the ability to keep track of the parts you have purchased and your spending. It also allows you to keep track of the parts you want in the future.<br><br> We'd love to see this developed into a social platform, but now is not the time for that. Go ahead and add parts to your collection or to your wishlist.</div>
+                                Van Builder is a web application, designed by van life enthusiast, for van life enthusiasts. We want you to have one place to go for your van build. This application gives you the ability to keep track of the parts you have purchased and your spending. It also allows you to keep track of the parts you want in the future.<br><br>Go ahead and add parts to your collection or to your wishlist.</div>
                             </div>
 
                             <div class="panel panel-default shadow">
