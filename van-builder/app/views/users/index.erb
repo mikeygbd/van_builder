@@ -477,9 +477,9 @@ small.text-muted {
 
 /*////////// HEADER //////////*/
 
-header {
+/* header {
   margin: 0 0 30px;
-}
+} */
 
 /*////////// NAVBAR //////////*/
 
@@ -555,9 +555,28 @@ header {
   left: 5px;
   margin: 0;
   /* text-shadow:0 .5px .5px; */
+}
+#social {
+  position: fixed;
+  padding-top: 100px;
+
 
 }
+#social img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
 
+#social a {
+
+}
+#account {
+  z-index: -1;
+  float: right;
+  margin: 10px;
+  padding-right: 5px;
+}
 .shadow {
   box-shadow: 0 3px 10px #333;
 }
@@ -588,29 +607,34 @@ footer {
             <!-- New Nav -->
             <header class="medium-fade shadow">
               <div class="wrapper">
+
                 <div id="logo" >
                   <h1><img src="/img/black_white.png" ></img></h1>
                   <h2>Van Builder</h2>
-                  <div id="social">
-                  <a href="https://www.instagram.com/van.builder/?hl=en"><img src="https://ya-webdesign.com/images/instagram-black-logo-png-6.png" width=30 alt="Instagram"></a>
-                  <a href="#"><img src="http://pngimg.com/uploads/twitter/twitter_PNG2.png" width=30 alt="Twitter"></a>
-                  <a href="#"><img src="/img/facebook.png" width=40 alt="Facebook"></a>
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/img/user.png" width=30 alt="user"></a>
-                  <ul class="dropdown-menu">
-                      <li><a href="/logout">Logout</a></li>
-                      <li><a href="/users/<%= current_user.id %>/delete">Delete Account</a></li>
-                  </ul>
-                </div>
                 </div>
               </div>
+
               <div id="navbar" class="light-fade">
                 <div class="wrapper">
+
+                  <div id="account">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/img/user.png" width=30 alt="user"></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/logout">Logout</a></li>
+                        <li><a href="/users/<%= current_user.id %>/delete">Delete Account</a></li>
+                  </ul>
+                  </div>
                   <nav>
-                    <a class="selected" href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a href="/logout">Log Out</a>
+                    <a class="selected" href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a>
                   </nav>
                 </div>
               </div>
             </header>
+            <div id="social">
+            <a href="https://www.instagram.com/van.builder/?hl=en" target="_blank"><img src="https://ya-webdesign.com/images/instagram-black-logo-png-6.png" alt="Instagram"></a><br>
+            <a href="https://twitter.com/" target="_blank"><img src="http://pngimg.com/uploads/twitter/twitter_PNG2.png" alt="Twitter"></a><br>
+            <a href="https://www.facebook.com/" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/transparent-on-dark-grey/500/icon-02-512.png" alt="Facebook"></a>
+          </div>
 
             <!-- New Nav -->
                 <div class="padding">
