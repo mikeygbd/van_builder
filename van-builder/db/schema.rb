@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190313014959) do
+ActiveRecord::Schema.define(version: 20190315223654) do
 
   create_table "parts", force: :cascade do |t|
     t.string  "name"
-    t.integer "price"
+    t.float   "price"
     t.string  "description"
     t.string  "manufacturer"
     t.integer "user_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20190313014959) do
 
   create_table "wishlist_parts", force: :cascade do |t|
     t.string  "name"
-    t.integer "price"
+    t.float   "price"
     t.string  "description"
     t.string  "manufacturer"
     t.integer "user_id"
