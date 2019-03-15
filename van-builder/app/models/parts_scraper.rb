@@ -18,7 +18,6 @@ class PartsScraper
     def self.scrape_part(url)
       doc = Nokogiri::HTML(open(url))
       @image_url = doc.search('#res').search('img').attr('src').text
-      # @part_price = doc.search('div.e10twf.T4OwTb').search('span').text
     end
 
     def self.scrape_campervanhq
