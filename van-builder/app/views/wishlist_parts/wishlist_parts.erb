@@ -404,6 +404,14 @@ input:-webkit-autofill {
 #navbar nav a.menu-icon {
   display: none;
 }
+
+#account {
+  z-index: -1;
+  float: right;
+  margin: 10px;
+  padding-right: 5px;
+}
+
 .shadow {
   box-shadow: 0 3px 10px #333;
 }
@@ -468,8 +476,16 @@ footer {
 </head>
 <div id="navbar" class="light-fade">
   <div class="wrapper">
+
+    <div id="account">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/img/user.png" width=30 alt="user"></a>
+      <ul class="dropdown-menu">
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/users/<%= current_user.id %>/delete">Delete Account</a></li>
+    </ul>
+    </div>
     <nav>
-      <a href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a href="/logout">Log Out</a>
+      <a  href="/users/index">Home</a><a href="/parts">My Parts</a><a class="selected" href="/wishlist_parts">My Wishlist</a>
     </nav>
   </div>
 </div>

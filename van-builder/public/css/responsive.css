@@ -14,19 +14,28 @@
 } */
 
 @media only screen and (max-width: 900px) {
+
+
   body {
     font-size: 85%;
   }
 
-  #logo h1 {
-    /* display: inline-block; */
-    width: 40px;
-    height: 40px;
-    /* background: url(../img/black_white.png) no-repeat; */
-  }
-  #logo h2 {
+
+
+  /* #logo h1 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 5px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(../img/black_white.png) no-repeat;
+    background-size: 10% 10%;
+  } */
+  /* #logo h2 {
     font-size: 2em;
-  }
+  } */
   /* #social {
     top: 72px;
   } */
@@ -40,7 +49,12 @@
   #navbar nav a {
     font-size: 0.9em;
   }
+  /* #social img {
+    width: 20px;
+    height: 20px;
+  } */
 }
+
 @media only screen and (max-width: 750px) {
   .col-1, .col-2, .col-3 {
     width: 100%;
