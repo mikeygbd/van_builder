@@ -11,4 +11,4 @@ use UsersController
 run ApplicationController
 
 
-heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
+heroku buildpacks:set heroku/ruby
