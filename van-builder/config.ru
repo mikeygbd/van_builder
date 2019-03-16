@@ -9,3 +9,6 @@ use PartsController
 use WishlistPartsController
 use UsersController
 run ApplicationController
+
+
+heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
