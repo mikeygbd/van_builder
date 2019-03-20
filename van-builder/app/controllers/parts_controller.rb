@@ -1,13 +1,13 @@
 require 'pry'
 class PartsController < ApplicationController
 
-  get '/parts/new' do
-    if logged_in?
-      erb :'/parts/add_part'
-    else
-      redirect to '/login'
-    end
-  end
+  # get '/parts/new' do
+  #   if logged_in?
+  #     erb :'/parts/add_part'
+  #   else
+  #     redirect to '/login'
+  #   end
+  # end
 
   post '/parts/new' do
     if logged_in? && params[:name] != "" && params[:price] != "" && params[:qty] != ""

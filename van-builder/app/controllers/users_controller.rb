@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if logged_in?
-      redirect to '/parts'
+      redirect to '/users/index'
     else
       erb :'/users/sign_up'
     end

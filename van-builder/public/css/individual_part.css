@@ -1,0 +1,344 @@
+
+hgroup {
+	text-align:center;
+	margin-top: 4em;
+}
+
+h1, h3 { font-weight: 300; }
+
+h1 { color: #636363; }
+
+h3 { color: #4a89dc; }
+
+form {
+	width: 380px;
+
+	margin: 4.9em auto;
+	padding: 3em 2em 2em 2em;
+	background: white;
+  text-align: center;
+	border: 1px solid #ebebeb;
+	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
+.group {
+	position: relative;
+	margin-bottom: 45px;
+}
+
+input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+}
+
+input:focus { outline: none; }
+
+
+/* Label */
+
+label {
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus ~ label, input.used ~ label {
+	top: -20px;
+  transform: scale(.75); left: -2px;
+	/* font-size: 14px; */
+	color: #4a89dc;
+}
+
+
+/* Underline */
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #4a89dc;
+	transition: all 0.2s ease;
+}
+
+.bar:before { left: 50%; }
+
+.bar:after { right: 50%; }
+
+
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+	from { background: black; }
+	to 	{ width: 0; background: transparent; }
+}
+
+
+/* Button */
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #3160B6;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.button:focus { outline: 0; }
+
+
+/* Button modifiers */
+
+.buttonBlue {
+  background: #4a89dc;
+  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.buttonBlue:hover { background: #357bd8; }
+
+
+/* Ripples container */
+
+.ripples {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+
+/* Ripples circle */
+
+.ripplesCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+  animation: ripples .4s ease-in;
+}
+
+
+/* Ripples animation */
+
+@keyframes ripples {
+  0% { opacity: 0; }
+
+  25% { opacity: 1; }
+
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
+}
+
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #FAFAFA inset !important;
+}
+
+
+/*////////// BACKGROUNDS //////////*/
+.white-wood {
+  background: url(https://previews.123rf.com/images/irrrina/irrrina1406/irrrina140600168/29418362-vintage-white-wooden-wall-background.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.light-fade {
+
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
+  background: #efefef; /* Old browsers */
+    background: -moz-linear-gradient(top,  #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(24%,#ffffff), color-stop(68%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
+
+.medium-fade {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
+  background: #eeeeee; /* Old browsers */
+  background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+/*////////// NAVBAR //////////*/
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 2;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+#navbar nav {
+  border-left: 1px solid #ccc;
+}
+
+#navbar nav a {
+  display: inline-block;
+  width: 16.6666667%;
+  margin: 0;
+  padding: 22px 0;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  text-decoration: none;
+  font: 1em "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+}
+
+#navbar nav a.selected {
+  background: #333;
+  color: white;
+}
+
+#navbar nav a:hover {
+  color: white;
+  background: rgb(0,0,0); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(71,71,71,1) 28%, rgba(81,81,81,1) 35%, rgba(71,71,71,1) 72%, rgba(43,43,43,1) 87%, rgba(28,28,28,1) 91%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(28%,rgba(71,71,71,1)), color-stop(35%,rgba(81,81,81,1)), color-stop(72%,rgba(71,71,71,1)), color-stop(87%,rgba(43,43,43,1)), color-stop(91%,rgba(28,28,28,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* W3C */
+}
+
+#navbar nav a.menu-icon {
+  display: none;
+}
+
+#account {
+  z-index: -1;
+  float: right;
+  margin: 10px;
+  padding-right: 5px;
+}
+
+.shadow {
+  box-shadow: 0 3px 10px #333;
+}
+
+body {
+ background: #bbb;
+   padding-top: 70px;
+}
+
+h3 {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  clear: both;
+  font: 1.8em "Trebuchet MS", Arial, sans-serif;
+  padding: 10px 305px 10px;
+  border: solid #000 1px;
+  background: #111;
+}
+h4 {
+  font-size: 12px;
+  text-align: center;
+}
+h2 {
+   font-size: 1.1em;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font: 2.6em "Trebuchet MS", Arial, sans-serif;
+  padding: 10px;
+  border: solid #000 1px;
+  background: #111;
+  margin: 50px 170px 50px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  font-size: 0.75em;
+  padding: 10px;
+  background: #eee;
+  border-top: 1px solid #ccc;
+}

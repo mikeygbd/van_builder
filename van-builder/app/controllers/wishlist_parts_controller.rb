@@ -1,12 +1,12 @@
 class WishlistPartsController < ApplicationController
 
-  get '/wishlist_parts/new' do
-    if logged_in?
-      erb :'/wishlist_parts/add_wishlist_part'
-    else
-      redirect to '/login'
-    end
-  end
+  # get '/wishlist_parts/new' do
+  #   if logged_in?
+  #     erb :'/wishlist_parts/add_wishlist_part'
+  #   else
+  #     redirect to '/login'
+  #   end
+  # end
 
   post '/wishlist_parts/new' do
     if logged_in? && params[:name] != "" && params[:price] != "" && params[:qty] != ""

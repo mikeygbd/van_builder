@@ -9,6 +9,3 @@ use PartsController
 use WishlistPartsController
 use UsersController
 run ApplicationController
-
-
-heroku buildpacks:set heroku/ruby
