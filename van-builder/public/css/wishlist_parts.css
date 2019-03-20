@@ -107,7 +107,7 @@ h1 { color: #636363; }
 
 h3 { color: #4a89dc; }
 
-form {
+.wlform {
 
 /* display: inline-block; */
 display: block;
@@ -462,4 +462,8 @@ font-size: 0.75em;
 padding: 10px;
 /* background: #eee; */
 border-top: 1px solid #ccc;
+}
+
+#add-button {
+  float: right;
 }

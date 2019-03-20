@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="/css/parts.css">
+  <link rel="stylesheet" href="/css/new_form.css">
 </head>
 <div id="navbar" class="light-fade">
   <div class="wrapper">
@@ -15,18 +16,18 @@
     </ul>
     </div>
     <nav>
-      <a href="/users/index">Home</a><a class="selected" href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a>
+      <a href="/users/index">Home</a><a class="selected" href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a href="/posts">My Blog</a>
     </nav>
   </div>
 </div>
 <body>
-    <h1><strong>My Parts</strong></h1>
+    <h1><strong>My Parts</strong><a href="#postModal" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Part</span></a></h1>
     <div class="parts">
 <% total = [] %>
 <% current_user.parts.each do |part| %>
 <% total << (part.price * part.qty) %>
-<form class="shadow">
-  <div id="contact"
+<form class="partform shadow">
+  <div id="contact">
     <h2><strong><%= part.manufacturer %> <%= part.name %></strong> </h2>
     <h4><%= part.description %><br></h4>
     <h2><strong>Quantity:</strong> <%= part.qty %><br></h2>
@@ -43,9 +44,31 @@
   <div class="total">
   <h3> <strong>Total Spent On Build:</strong> $<%=amount(total.inject(0, :+)) %> </h3>
   </div>
+
+  <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  			Add Part
+        </div>
+        <div class="modal-body">
+            <form action="/parts/new" method=POST class="form center-block" autocomplete="on">
+              <div class="form-group">
+                <textarea class="form-control input-lg" name = "manufacturer" autofocus="" placeholder="Manufacturer"></textarea>
+                <textarea class="form-control input-lg" name = "name" autofocus="" placeholder="Part Name" required></textarea>
+                <textarea class="form-control input-lg" name = "price" autofocus="" placeholder="Price" required></textarea>
+                <textarea class="form-control input-lg" name = "qty" autofocus="" placeholder="Quantity" required>1</textarea>
+                <textarea class="form-control input-lg" name = "description" autofocus="" placeholder="Description"></textarea>
+              </div>
+              <input class="btn btn-primary btn-sm" type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
 </body>
-
-
 
 <footer class="light-fade">
     &copy; 2019 Van Builder. All Rights Reserved.

@@ -19,7 +19,7 @@ class PartsController < ApplicationController
       @new_part.url = @url
       @new_part.user_id = current_user.id
       @new_part.save
-      redirect to '/users/index'
+      redirect to '/parts'
     else
       redirect to '/users/index'
     end

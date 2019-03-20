@@ -38,7 +38,7 @@
                   </ul>
                   </div>
                   <nav>
-                    <a class="selected" href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a>
+                    <a class="selected" href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a href="/posts">My Blog</a>
                   </nav>
                 </div>
               </div>
@@ -77,7 +77,7 @@
                               <div class="panel panel-default shadow">
                                 <div class="panel-heading">
                                   <a href="#postModal" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Part</span></a>
-                                   <h4>Your Part Collection</h4>
+                                   <h4>Your Parts</h4>
                                  </div>
                                   <div class="panel-body">
                                     <div class="list-group shadow">
@@ -118,7 +118,7 @@
                             <div class="panel panel-default shadow">
                               <div class="panel-heading">
                                 <a href="#postModal2" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Part To Wishlist</span></a>
-                                 <h4>Your Part Wishlist</h4>
+                                 <h4>Your Wishlist</h4>
                                </div>
                                 <div class="panel-body">
                                   <div class="list-group shadow">
@@ -128,6 +128,21 @@
                                   </div>
                                 </div>
                             </div>
+
+                            <div class="panel panel-default shadow">
+                              <div class="panel-heading">
+                                <a href="#postModal3" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Post</span></a>
+                                 <h4>Your Blogs</h4>
+                               </div>
+                                <div class="panel-body">
+                                  <div class="list-group shadow">
+                                    <% current_user.posts.each do |post| %>
+                                    <a href= '/posts/<%= post.id %>' role="button" class="list-group-item"><%=post.title%></a>
+                                    <% end %>
+                                  </div>
+                                </div>
+                            </div>
+
                         </div>
                           </div>
                        </div><!--/row -->
@@ -183,6 +198,28 @@
         </div>
     </div>
     </div>
+
+    <div id="postModal3" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          Add Post
+          </div>
+          <div class="modal-body">
+              <form action="/posts/new" method=POST class="form center-block">
+                <div class="form-group">
+                  <textarea class="form-control input-lg" name = "title" autofocus="" placeholder="Title" required></textarea>
+                  <textarea class="form-control input-lg" name = "video_link" autofocus="" placeholder="Video Link"></textarea>
+                  <textarea class="form-control input-lg" name = "description" rows="8" cols="80" autofocus="" placeholder="Description" required></textarea>
+                </div>
+                <input class="btn btn-primary btn-sm" type="submit" value="Submit" id="submit">
+              </form>
+          </div>
+          </div>
+      </div>
+      </div>
+
   <footer>
       &copy; 2019 Van Builder. All Rights Reserved.
   </footer>

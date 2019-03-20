@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="/css/wishlist_parts.css">
+  <link rel="stylesheet" href="/css/new_form.css">
 </head>
 <div id="navbar" class="light-fade">
   <div class="wrapper">
@@ -15,17 +16,17 @@
     </ul>
     </div>
     <nav>
-      <a  href="/users/index">Home</a><a href="/parts">My Parts</a><a class="selected" href="/wishlist_parts">My Wishlist</a>
+      <a  href="/users/index">Home</a><a href="/parts">My Parts</a><a class="selected" href="/wishlist_parts">My Wishlist</a><a href="/posts">My Blog</a>
     </nav>
   </div>
 </div>
 <body>
-  <h1><strong>My Wishlist</strong></h1>
+  <h1><strong>My Wishlist</strong><a href="#postModal2" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Part</span></a></h1>
 <% total = [] %>
 <% current_user.wishlist_parts.each do |wishlist_part| %>
 <% total << (wishlist_part.price * wishlist_part.qty) %>
-<form class="shadow">
-  <div id="contact"
+<form class="wlform shadow">
+  <div id="contact">
   <h2><strong><%= wishlist_part.manufacturer %> <%= wishlist_part.name %></strong> </h2>
   <h4><%= wishlist_part.description %><br></h4>
   <h2><strong>Quantity:</strong> <%= wishlist_part.qty %><br></h2>
@@ -41,6 +42,30 @@
 <div class="total">
 <h3> <strong>Wishlist Total:</strong> $<%= amount(total.inject(0, :+)) %> </h3>
 </div>
+
+<div id="postModal2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      Add Part To Wishlist
+      </div>
+      <div class="modal-body">
+          <form action="/wishlist_parts/new" method=POST class="form center-block">
+            <div class="form-group">
+              <textarea class="form-control input-lg" name = "manufacturer" autofocus="" placeholder="Manufacturer"></textarea>
+              <textarea class="form-control input-lg" name = "name" autofocus="" placeholder="Part Name" required></textarea>
+              <textarea class="form-control input-lg" name = "price" autofocus="" placeholder="Price" required></textarea>
+              <textarea class="form-control input-lg" name = "qty" autofocus="" placeholder="Quantity" required>1</textarea>
+              <textarea class="form-control input-lg" name = "description" autofocus="" placeholder="Description"></textarea>
+            </div>
+            <input class="btn btn-primary btn-sm" type="submit" value="Submit" id="submit">
+          </form>
+      </div>
+      </div>
+  </div>
+  </div>
+
 </body>
 
 <footer class="light-fade">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190315223654) do
+ActiveRecord::Schema.define(version: 20190320152752) do
 
   create_table "parts", force: :cascade do |t|
     t.string  "name"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20190315223654) do
     t.string  "url"
     t.string  "page_link"
     t.integer "qty"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string  "title"
+    t.text    "description"
+    t.integer "user_id"
+    t.string  "video_link"
+    t.string  "url"
   end
 
   create_table "users", force: :cascade do |t|

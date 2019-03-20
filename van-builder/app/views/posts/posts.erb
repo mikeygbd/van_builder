@@ -1,0 +1,72 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="/css/responsive.css">
+
+<head>
+  <link rel="stylesheet" href="/css/posts.css">
+  <link rel="stylesheet" href="/css/new_form.css">
+</head>
+<div id="navbar" class="light-fade">
+  <div class="wrapper">
+
+    <div id="account">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/img/user.png" width=30 alt="user"></a>
+      <ul class="dropdown-menu">
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/users/<%= current_user.id %>/delete">Delete Account</a></li>
+    </ul>
+    </div>
+    <nav>
+      <a href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a class="selected" href="/posts">My Blog</a>
+    </nav>
+  </div>
+</div>
+<body>
+    <h1><strong>My Blog</strong><a href="#postModal" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Post</span></a></h1>
+    <div class="posts">
+
+<% current_user.posts.each do |post| %>
+
+<form class="post shadow">
+  <div id="contact"
+    <h2><strong><%= post.title %></strong> </h2><br><br>
+    <a href="<%= post.video_link %>" target="_blank">Video Link</a><br>
+    <div class="description">
+    <h4><%= post.description %></h4>
+    </div>
+    <br>
+    <a href="/posts/<%= post.id %>/edit">Edit</a>
+    &nbsp; | &nbsp;
+    <a href="/posts/<%= post.id %>/delete">Delete</a>
+  </div>
+</form>
+<% end %>
+  </div>
+
+
+  <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  			Add Post
+        </div>
+        <div class="modal-body">
+            <form action="/posts/new" method=POST class="form center-block" autocomplete="on">
+              <div class="form-group">
+                <textarea class="form-control input-lg" name = "title" autofocus="" placeholder="Title" required></textarea>
+                <!-- <textarea class="form-control input-lg" name = "url" autofocus="" placeholder="Image URL"></textarea> -->
+                <textarea class="form-control input-lg" name = "video_link" autofocus="" placeholder="Video Link"></textarea>
+                <textarea class="form-control input-lg" name = "description" rows="8" cols="80" autofocus="" placeholder="Description" required></textarea>
+              </div>
+              <input class="btn btn-primary btn-sm" type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+<footer class="light-fade">
+    &copy; 2019 Van Builder. All Rights Reserved.
+</footer>

@@ -1,0 +1,40 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/css/edit_post.css">
+</head>
+<div id="navbar" class="light-fade">
+  <div class="wrapper">
+
+    <div id="account">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/img/user.png" width=30 alt="user"></a>
+      <ul class="dropdown-menu">
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/users/<%= current_user.id %>/delete">Delete Account</a></li>
+    </ul>
+    </div>
+    <nav>
+      <a href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a href="/posts">My Blog</a>
+    </nav>
+  </div>
+</div>
+<body>
+  <div class="container">
+    <div id="contact"
+    <h2> <strong><u>Edit Post</u></strong> </h2>
+    <h3><strong>Title:</strong> <%= @post.title %><br></h3>
+    <h3><strong>Video Link:</strong> <%= @post.video_link %><br></h3>
+    <h3><strong>Description:</strong> <%= @post.description %></h3>
+
+      <form action="/posts/<%= @post.id %>" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <input type="text" placeholder= "Title:" name="title" value="<%= @post.title %>">
+      <input type="text" placeholder= "Video Link:" name="video_link" value="<%= @post.video_link %>">
+      <textarea name="description" placeholder= "Description" rows="6" cols="50" value="<%= @post.description %>"><%= @post.description %></textarea><br><br>
+      <button type="update" value="Update" id="update">Update</button>
+    </form>
+    </div>
+  </div>
+</body>
+<footer>
+    &copy; 2019 Van Builder. All Rights Reserved.
+</footer>

@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" href="/css/individual_part.css">
+  <link rel="stylesheet" href="/css/individual_post.css">
 </head>
 <header>
   <div id="navbar" class="light-fade">
@@ -19,17 +19,20 @@
   </div>
   </header>
   <body>
-<form class="shadow">
+
+
+<form class="post shadow">
   <div id="contact"
-    <h2><strong><%= @part.manufacturer %> <%= @part.name %></strong> </h2>
-    <h4><%= @part.description %><br></h4>
-    <h2><strong>Quantity:</strong> <%= @part.qty %><br></h2>
-    <img src="<%= @part.url %>"></img><br>
-    <h2><strong>Unit Price: </strong>$<%= amount(@part.price) %></h2>
-    <h2><strong>Total Price: </strong>$<%= amount((@part.price * @part.qty)) %> </h2><br>
-    <a href="/parts/<%= @part.id %>/edit">Edit</a>
+    <h2><strong><%= @post.title %></strong> </h2><br><br>
+  
+    <a href="<%= @post.video_link %>" target="_blank">Video Link</a><br>
+    <div class="description">
+    <h4><%= @post.description %></h4>
+    </div>
+    <br>
+    <a href="/posts/<%= @post.id %>/edit">Edit</a>
     &nbsp; | &nbsp;
-    <a href="/parts/<%= @part.id %>/delete">Delete</a>
+    <a href="/posts/<%= @post.id %>/delete">Delete</a>
   </div>
 </form>
 </body>
