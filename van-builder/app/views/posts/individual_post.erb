@@ -24,8 +24,7 @@
 <form class="post shadow">
   <div id="contact"
     <h2><strong><%= @post.title %></strong> </h2><br><br>
-  
-    <a href="<%= @post.video_link %>" target="_blank">Video Link</a><br>
+    <%= @post.embed %><br>
     <div class="description">
     <h4><%= @post.description %></h4>
     </div>

@@ -137,7 +137,7 @@
                                 <div class="panel-body">
                                   <div class="list-group shadow">
                                     <% current_user.posts.each do |post| %>
-                                    <a href= '/posts/<%= post.id %>' role="button" class="list-group-item"><%=post.title%></a>
+                                    <a href= '/posts/<%= post.id %>' role="button" class="list-group-item"> <div class="lead"><%=post.title%><br><br> <%=post.embed%></div></a>
                                     <% end %>
                                   </div>
                                 </div>
@@ -210,7 +210,7 @@
               <form action="/posts/new" method=POST class="form center-block">
                 <div class="form-group">
                   <textarea class="form-control input-lg" name = "title" autofocus="" placeholder="Title" required></textarea>
-                  <textarea class="form-control input-lg" name = "video_link" autofocus="" placeholder="Video Link"></textarea>
+                  <textarea class="form-control input-lg" name = "embed" autofocus="" placeholder="Video Embed"></textarea>
                   <textarea class="form-control input-lg" name = "description" rows="8" cols="80" autofocus="" placeholder="Description" required></textarea>
                 </div>
                 <input class="btn btn-primary btn-sm" type="submit" value="Submit" id="submit">

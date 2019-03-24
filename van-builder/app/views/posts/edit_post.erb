@@ -22,13 +22,13 @@
     <div id="contact"
     <h2> <strong><u>Edit Post</u></strong> </h2>
     <h3><strong>Title:</strong> <%= @post.title %><br></h3>
-    <h3><strong>Video Link:</strong> <%= @post.video_link %><br></h3>
+    <h3><strong>Video:</strong> <%= post.embed %><br></h3>
     <h3><strong>Description:</strong> <%= @post.description %></h3>
 
       <form action="/posts/<%= @post.id %>" method="POST">
       <input id="hidden" type="hidden" name="_method" value="PATCH">
       <input type="text" placeholder= "Title:" name="title" value="<%= @post.title %>">
-      <input type="text" placeholder= "Video Link:" name="video_link" value="<%= @post.video_link %>">
+      <input type="text" placeholder= "Embed Video:" name="embed" value="<%= @post.embed %>">
       <textarea name="description" placeholder= "Description" rows="6" cols="50" value="<%= @post.description %>"><%= @post.description %></textarea><br><br>
       <button type="update" value="Update" id="update">Update</button>
     </form>

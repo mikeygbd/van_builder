@@ -107,3 +107,7 @@ h1 img {
     font-size: 65%;
   }
 }
+
+.embed {
+  max-width: 5px;
+}

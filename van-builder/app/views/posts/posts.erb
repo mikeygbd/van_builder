@@ -27,9 +27,9 @@
 <% current_user.posts.each do |post| %>
 
 <form class="post shadow">
-  <div id="contact"
+  <div id="contact">
     <h2><strong><%= post.title %></strong> </h2><br><br>
-    <a href="<%= post.video_link %>" target="_blank">Video Link</a><br>
+    <%= post.embed %><br>
     <div class="description">
     <h4><%= post.description %></h4>
     </div>
@@ -54,8 +54,8 @@
             <form action="/posts/new" method=POST class="form center-block" autocomplete="on">
               <div class="form-group">
                 <textarea class="form-control input-lg" name = "title" autofocus="" placeholder="Title" required></textarea>
-                <!-- <textarea class="form-control input-lg" name = "url" autofocus="" placeholder="Image URL"></textarea> -->
-                <textarea class="form-control input-lg" name = "video_link" autofocus="" placeholder="Video Link"></textarea>
+                <textarea class="form-control input-lg" name = "embed" autofocus="" placeholder="Video Embed"></textarea>
+                <!-- <textarea class="form-control input-lg" name = "video_link" autofocus="" placeholder="Video Link"></textarea> -->
                 <textarea class="form-control input-lg" name = "description" rows="8" cols="80" autofocus="" placeholder="Description" required></textarea>
               </div>
               <input class="btn btn-primary btn-sm" type="submit" value="Submit" id="submit">
