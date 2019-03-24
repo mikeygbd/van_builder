@@ -16,29 +16,31 @@
     </ul>
     </div>
     <nav>
-      <a href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a class="selected" href="/posts">My Blog</a><a href="/news_feeds">News Feed</a>
+      <a href="/users/index">Home</a><a href="/parts">My Parts</a><a href="/wishlist_parts">My Wishlist</a><a  href="/posts">My Blog</a><a class="selected" href="/news_feeds">News Feed</a>
     </nav>
   </div>
 </div>
 <body>
-    <h1><strong>My Blog</strong><a href="#postModal" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Post</span></a></h1>
+    <h1><strong>News Feed</strong></h1>
     <div class="posts">
 
-<% current_user.posts.each do |post| %>
+<% Post.all.each do |post| %>
+
 
 <form class="post shadow">
   <div id="contact">
+    <%  @user = User.find_by(post.user_id) %>
+    <h2>Posted By: <%= @user.name %> </h2>
+
     <h2><strong><%= post.title %></strong> </h2><br><br>
     <%= post.embed %><br><br>
     <div class="description">
     <h4><%= post.description %></h4>
     </div>
     <br>
-    <a href="/posts/<%= post.id %>/edit">Edit</a>
-    &nbsp; | &nbsp;
-    <a href="/posts/<%= post.id %>/delete">Delete</a>
   </div>
 </form>
+
 <% end %>
   </div>
 
